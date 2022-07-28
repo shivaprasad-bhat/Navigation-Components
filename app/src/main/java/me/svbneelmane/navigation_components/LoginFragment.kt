@@ -36,10 +36,12 @@ class LoginFragment : Fragment() {
      * do a navigation if correct values are entered
      */
     private fun doSignIn(view: View) {
+        val action =
+            LoginFragmentDirections.navigateToWelcome(loginBinding.username.text.toString())
         val result =
             loginBinding.username.text.toString() == "admin" && loginBinding.password.text.toString() == "admin"
         if (result) {
-            Navigation.findNavController(view).navigate(R.id.navigateToWelcome)
+            Navigation.findNavController(view).navigate(action)
         } else {
             AlertDialog.Builder(requireContext())
                 .setCancelable(true)
