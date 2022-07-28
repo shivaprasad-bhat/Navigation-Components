@@ -1,5 +1,11 @@
 package me.svbneelmane.navigation_components
 
+/**
+ * Fragment to hold the Welcome screen UI
+ * @author shivaprasad-bhat
+ * @date-created 27-Jul-22
+ */
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -21,6 +27,9 @@ class WelcomeFragment : Fragment() {
         return welcomeBinding.root
     }
 
+    /**
+     * function to do a back navigation
+     */
     private fun doGoBack(view: View) {
         Navigation.findNavController(view).navigate(R.id.navigateToLogin)
     }
